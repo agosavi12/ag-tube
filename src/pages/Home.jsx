@@ -1,4 +1,39 @@
+import styled from 'styled-components';
+import Card from '../components/Card';
+
+const Container = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+`;
+
 const Home = () => {
-  return <div>Home</div>;
+  return (
+    <Container>
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+    </Container>
+  );
 };
 export default Home;

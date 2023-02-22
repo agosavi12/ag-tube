@@ -16,6 +16,7 @@ import FlagIcon from '@mui/icons-material/Flag';
 import HelpIcon from '@mui/icons-material/Help';
 import SettingsBrightnessIcon from '@mui/icons-material/SettingsBrightness';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import { Link } from 'react-router-dom';
 
 const Container = styled.div`
   flex: 1;
@@ -49,6 +50,10 @@ const Item = styled.div`
   gap: 20px;
   cursor: pointer;
   padding: 7.5px 0px;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.soft};
+  }
 `;
 
 const Hr = styled.hr`
@@ -82,10 +87,12 @@ const Menu = ({ darkMode, setDarkMode }) => {
   return (
     <Container>
       <Wrapper>
-        <Logo>
-          <Img src={AgLogo} />
-          <span>AG-TUBE</span>
-        </Logo>
+        <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <Logo>
+            <Img src={AgLogo} />
+            <span>AG-TUBE</span>
+          </Logo>
+        </Link>
 
         <Item>
           <HomeIcon />
@@ -118,10 +125,11 @@ const Menu = ({ darkMode, setDarkMode }) => {
 
         <Login>
           Sign in to like videos, comment & subscribe
-          <Button>
-            {' '}
-            <AccountCircleIcon /> SIGN IN
-          </Button>
+          <Link to="signin" style={{ textDecoration: 'none' }}>
+            <Button>
+              <AccountCircleIcon /> SIGN IN
+            </Button>
+          </Link>
         </Login>
 
         <Hr />
@@ -177,7 +185,7 @@ const Menu = ({ darkMode, setDarkMode }) => {
 
         <Item onClick={() => setDarkMode(!darkMode)}>
           <SettingsBrightnessIcon />
-          Light Mode
+          {darkMode ? 'Light Mode' : 'Dark Mode'}
         </Item>
       </Wrapper>
     </Container>
